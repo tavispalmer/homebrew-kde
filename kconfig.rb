@@ -9,6 +9,9 @@ class Kconfig < Formula
   license all_of: ["LGPL-2.0-only", "LGPL-3.0-only"]
 
   depends_on "cmake" => :build
+  depends_on "doxygen" => :build
+  depends_on "extra-cmake-modules" => :build
+  depends_on "qt"
 
   def install
     args = ["-DCMAKE_INSTALL_LIBEXECDIR=lib",
