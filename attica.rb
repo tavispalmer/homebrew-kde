@@ -6,9 +6,12 @@ class Attica < Formula
   homepage "https://community.kde.org/Frameworks"
   url "https://download.kde.org/stable/frameworks/6.0/attica-6.0.0.tar.xz"
   sha256 "ef21d8e57aeae4757b6b40dfe0d0e9c38302a979164b4e4d493b631b7c023d23"
-  license :any_of ["LGPL-2.0-only", "LGPL-3.0-only"]
+  license all_of: ["LGPL-2.0-only", "LGPL-3.0-only"]
 
   depends_on "cmake" => :build
+  depends_on "doxygen" => :build
+  depends_on "extra-cmake-modules" => :build
+  depends_on "qt"
 
   def install
     args = ["-DBUILD_TESTING=OFF",
